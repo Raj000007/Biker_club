@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
+import os
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -50,8 +51,8 @@ def register():
             db.session.commit()
             flash('Registration successful! You can now log in.', 'success')
             return redirect(url_for('login'))
-        except:
-            flash('Username already exists. Please try a different one.', 'danger')
+        except Exception as e:
+            flash('Username already exists or there was an issue. Please try again.', 'danger')
 
     return render_template('register.html')
 
@@ -62,4 +63,8 @@ def dashboard():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+
+    try:
+        app.run(host="0.0.0.0", port=5000, use_reloader=False, debug=False)
+    except SystemExit:
+        print("The application was stopped unexpectedly. Ensure the environment supports Flask applications.")
