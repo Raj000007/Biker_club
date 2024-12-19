@@ -101,59 +101,19 @@
             margin-top: 20px;
         }
 
-        .social-buttons button {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 10px;
-            border: none;
-            font-size: 16px;
+        /* Circular shape for social media logos */
+        .social-buttons img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 15px 0;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: transform 0.3s ease;
+            object-fit: cover; /* Ensure the logo is contained within the circle */
         }
 
-        .google-btn {
-            background-color: #db4437;
-            color: white;
-        }
-
-        .google-btn img {
-            width: 20px;
-            margin-right: 10px;
-        }
-
-        .google-btn:hover {
-            background-color: #c1351d;
-        }
-
-        .facebook-btn {
-            background-color: #3b5998;
-            color: white;
-        }
-
-        .facebook-btn img {
-            width: 20px;
-            margin-right: 10px;
-        }
-
-        .facebook-btn:hover {
-            background-color: #2d4373;
-        }
-
-        .apple-btn {
-            background-color: #000000;
-            color: white;
-        }
-
-        .apple-btn img {
-            width: 20px;
-            margin-right: 10px;
-        }
-
-        .apple-btn:hover {
-            background-color: #333333;
+        .social-buttons img:hover {
+            transform: scale(1.1);
         }
 
         @media (max-width: 480px) {
@@ -181,20 +141,20 @@
         <p>Don't have an account? <a href="/register">Sign up</a></p>
 
         <div class="social-buttons">
-            <!-- Google Login Button -->
-            <button class="google-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo">Login with Google
-            </button>
+            <!-- Google Login Image (Circular) -->
+            <a href="/auth/google">
+                <img src="{{ url_for('static', filename='google.jpeg') }}" alt="Google Logo">
+            </a>
 
-            <!-- Facebook Login Button -->
-            <button class="facebook-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">Login with Facebook
-            </button>
+            <!-- Facebook Login Image (Circular) -->
+            <a href="/auth/facebook">
+                <img src="{{ url_for('static', filename='fb.jpeg') }}" alt="Facebook Logo">
+            </a>
 
-            <!-- Apple ID Login Button -->
-            <button class="apple-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_%28black%29.svg" alt="Apple Logo">Login with Apple ID
-            </button>
+            <!-- Apple ID Login Image (Circular) -->
+            <a href="/auth/apple">
+                <img src="{{ url_for('static', filename='apple.jpeg') }}" alt="Apple Logo">
+            </a>
         </div>
     </div>
 </body>
