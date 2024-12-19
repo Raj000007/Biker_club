@@ -20,7 +20,7 @@
         }
 
         .login-container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: transparent;  /* Removed white background */
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             padding: 50px;
@@ -41,7 +41,7 @@
 
         h2 {
             font-size: 30px;
-            color: #333;
+            color: #fff;  /* White text for better contrast */
             margin-bottom: 20px;
             font-weight: bold;
             text-transform: uppercase;
@@ -145,17 +145,17 @@
         <div class="social-buttons">
             <!-- Google Login Image (Circular) -->
             <a href="/auth/google">
-                <img src="{{ url_for('static', filename='google.jpeg') }}" alt="Google Logo">
+                <img src="{{ url_for('static', filename='google.jpg') }}" alt="Google Logo">
             </a>
 
             <!-- Facebook Login Image (Circular) -->
             <a href="/auth/facebook">
-                <img src="{{ url_for('static', filename='fb.jpeg') }}" alt="Facebook Logo">
+                <img src="{{ url_for('static', filename='fb.jpg') }}" alt="Facebook Logo">
             </a>
 
             <!-- Apple ID Login Image (Circular) -->
             <a href="/auth/apple">
-                <img src="{{ url_for('static', filename='apple.jpeg') }}" alt="Apple Logo">
+                <img src="{{ url_for('static', filename='apple.jpg') }}" alt="Apple Logo">
             </a>
         </div>
     </div>
